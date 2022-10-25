@@ -25,3 +25,4 @@ Uma API de contas bancárias com regras de negócios a serem seguidas e requisit
 - Criar meu próprio Middleware e entender o significado e uso do mesmo.
 - Testar a API usando o Insomnia.
 - Aplicar uma lógica de acesso e excessões que contemplem regras de negócio.
+- Utilizar e tratar dados vindos de query, route, e body params.
