@@ -127,9 +127,10 @@ app.get("/statement/date", verifyIfExistsAccountCPF, (req, res) => {
 
   const dateFormat = new Date(date + " 00:00");
 
-  const statementByDate = customer.statement.filter((statement) => {
-    statement.created_at.toDateString() === new Date(dateFormat).toDateString();
-  });
+  const statementByDate = customer.statement.filter(
+    (statement) =>
+      statement.created_at.toDateString() === dateFormat.toDateString()
+  );
 
   return res.json(statementByDate);
 });
