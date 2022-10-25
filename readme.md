@@ -1,5 +1,64 @@
 # FinApi - Financeira 💰
-Uma API de contas bancárias com regras de negócios a serem seguidas e requisitos, feita com NodeJS e ExpressJS. Testado com Insomnia.
+Uma API de contas bancárias com regras de negócios a serem seguidas e requisitos, feita com NodeJS e ExpressJS. Testado com Insomnia.  
+Projeto simples para botar em prática meus estudos em NodeJS.
+
+## Como usar
+1. É preciso utilizar uma ferramenta de design e testes de APIs, como o [Insomnia](https://insomnia.rest/products/insomnia) ou [Postman](https://www.postman.com/).
+2. Será preciso passar o CPF no header da requisição para acessar determinadas rotas (middleware). De chave: `cpf`, e valor relacionado ao número do CPF. (não possue validador de CPF)
+
+
+## Documentação da API
+
+#### Retorna os dados (JSON) da conta ligada ao CPF (via header da requisição)
+
+```http
+  GET /account
+```
+#### Cria uma conta com o `cpf` e o `name` recebidos via body da requisição
+
+```http
+  POST /account
+```
+
+#### Atualiza o `name`, via body da requisição, da conta através do CPF indicado (via header da requisição)
+
+```http
+  PUT /account
+```
+
+#### Remove a conta através do CPF indicado (via header da requisição)
+
+```http
+  DELETE /account
+```
+
+#### Retorna um array (extrato) das transações da conta do CPF indicado (via header da requisição)
+
+```http
+  GET /statement
+```
+
+#### Retorna um array (extrato) das transações, no período indicado, da conta do CPF passado (via header da requisição)
+
+```http
+  GET /statement/date?date=2022-10-25
+```
+
+| Parâmetro   | Tipo       | Descrição                                   |
+| :---------- | :--------- | :------------------------------------------ |
+| `date`      | `query` | **Obrigatório**. A data que você quer saber, em padrão EUA |
+
+#### Realiza um saque de valor descrito no `amount`, recebido via body da requisição, na conta do CPF indicado (via header da requisição)
+
+```http
+  POST /withdraw
+```
+
+#### Realiza um depósito de valor descrito no `amount` e com uma descrição sobre o depósito na `description`, recebidos via body da requisição, na conta do CPF indicado (via header da requisição)
+
+```http
+  POST /deposit
+```
 
 ## Requisitos
 
