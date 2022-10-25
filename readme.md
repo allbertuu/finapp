@@ -1,4 +1,4 @@
-# FinApi - Financeira 📃
+# FinApi - Financeira 💰
 Uma API de contas bancárias com regras de negócios a serem seguidas e requisitos, feita com NodeJS e ExpressJS. Testado com Insomnia.
 
 ## Requisitos
